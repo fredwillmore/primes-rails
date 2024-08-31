@@ -1,0 +1,20 @@
+<div class="tab-content">
+  <div class="tab-pane fade" id="table" role="tabpanel" aria-labelledby="table-tab">
+    <div>
+      <h1>Table of Primes:</h1>
+      <br>
+      <h2>Description:</h2>
+      The original challenge was to write a program that prints out a nicely formatteed multiplication table of the first 10 prime numbers.
+      I modified the class to accept any integer from 1-100. (The class will actually accept larger numbers, but for this demonstation 100 is plenty)
+    </div>
+    <div class="p-3">
+      <%= turbo_frame_tag 'primes_table', src: primes_table_url %>
+    </div>
+    <div class="p-3">
+      <%= form_with url: primes_table_url, method: :get, data: { turbo_frame: "primes_table" } do |form| %>
+        <%= form.label :table_size, "Select Value for Table Size:" %>
+        <%= form.select :table_size, 1..100, selected: 10 %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -43,3 +43,6 @@
   text-align: center;
   padding: 7px;
 }
+.tab-content {
+  @extend .p-3;
+}

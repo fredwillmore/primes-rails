@@ -1,35 +1,18 @@
-<style>
-</style>
+<div class="container mt-4">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="sieve-tab" data-bs-toggle="tab" data-bs-target="#sieve" type="button" role="tab" aria-controls="sieve" aria-selected="true">Sieve of Eratosthenes</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="table-tab" data-bs-toggle="tab" data-bs-target="#table" type="button" role="tab" aria-controls="table" aria-selected="false">Table of Primes</button>
+    </li>
+  </ul>
 
-<div>
-  <h1>Sieve of Eratosthenes demonstration:</h1>
-  <br>
-  <h2>Algorithm description:</h2>
-  <ol>
-    <li>Mark the number 1 as non-prime.</li>
-    <li>Mark the first unmarked number as prime. Step through the set of numbers, marking each multiple as a non-prime number.</li>
-    <li>Repeat step 2 until all numbers are marked.</li>
-  </ol>
+  <!-- Tab panes -->
+  <%= render partial: 'sieve_tab_content' %>
+  <%= render partial: 'table_tab_content' %>
+
 </div>
-<div id="current-number-info">
-</div>
-<% (1..@rows).each do |row| %>
-  <div>
-    <% (1..@columns).each do |column| %>
-      <% number = (row-1)*@columns + column %>
-      <% prime_factors = controller.prime_factors(number) %>
-      <% title = prime_factors.empty? ? "Prime" : "Prime factors: #{prime_factors.join(', ')}" %>
-      <div
-        id="thing_<%= number %>"
-        class="node m-1"
-        data-number="<%= number %>"
-        data-prime-factors="<%= controller.prime_factors(number).join(',') %>"
-        data-bs-toggle="tooltip"
-        title="<%= title %>"
-      ><%= number %></div>
-    <% end %>
-  </div>
-<% end %>
-<div id="run-again-container">
-  <button class="button" id="run-again">Run Again</button>
-</div>
+
+
