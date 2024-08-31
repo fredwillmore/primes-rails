@@ -14,4 +14,9 @@ class HomeController < ApplicationController
     end
     factors
   end
+
+  def primes_table
+    n = (params[:table_size] || 10).to_i
+    @primes_table = PrimeTable::new(n).to_s
+  end
 end
