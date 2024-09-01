@@ -5,7 +5,7 @@ import "jquery"
 import "popper"
 import "bootstrap"
 
-import Sieve from './sieve';
+import Sieve from 'sieve';
 
 $(function() {
   new Sieve().run()

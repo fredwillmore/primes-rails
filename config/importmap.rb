@@ -9,3 +9,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.js"
 pin "popper", to: 'popper.js', preload: true
 pin "bootstrap", to: 'bootstrap.min.js', preload: true
+pin "sieve", to: 'sieve.js', preload: true
